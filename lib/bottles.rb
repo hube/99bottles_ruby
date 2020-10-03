@@ -19,4 +19,14 @@ class Bottles
     last_bottle = verse_num == 2 ? "bottle" : "bottles"
     return VERSE % [verse_num, verse_num, verse_num - 1, last_bottle]
   end
+
+  def verses(*verse_nums)
+    verses = []
+
+    verse_nums.each do |verse_num|
+      verses << verse(verse_num)
+    end
+
+    verses.join("\n")
+  end
 end

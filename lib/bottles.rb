@@ -1,4 +1,8 @@
 class Bottles
+  SIXTH_VERSE = "1 six-pack of beer on the wall, " +
+      "1 six-pack of beer.\n" +
+      "Take one down and pass it around, " +
+      "5 bottles of beer on the wall.\n"
   VERSE = "%s bottles of beer on the wall, " +
       "%s bottles of beer.\n" +
       "Take one down and pass it around, " +
@@ -14,6 +18,7 @@ class Bottles
 
   def verse(verse_num)
     return FINAL_VERSE if verse_num == 1
+    return SIXTH_VERSE if verse_num == 6
     return ZEROTH_VERSE if verse_num == 0
 
     last_bottle = verse_num == 2 ? "bottle" : "bottles"

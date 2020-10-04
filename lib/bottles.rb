@@ -11,16 +11,11 @@ class Bottles
       "no more bottles of beer.\n" +
       "Go to the store and buy some more, " +
       "99 bottles of beer on the wall.\n"
-    when 2
-      "#{verse_num} bottles of beer on the wall, " +
-      "#{verse_num} bottles of beer.\n" +
-      "Take one down and pass it around, " +
-      "#{verse_num - 1} bottle of beer on the wall.\n"
     else
       "#{verse_num} bottles of beer on the wall, " +
       "#{verse_num} bottles of beer.\n" +
       "Take one down and pass it around, " +
-      "#{verse_num - 1} bottles of beer on the wall.\n"
+      "#{verse_num - 1} #{container(verse_num - 1)} of beer on the wall.\n"
     end
   end
 
@@ -32,5 +27,16 @@ class Bottles
 
   def song
     verses(99, 0)
+  end
+
+  private
+
+  def container(count)
+    case count
+    when 1
+      "bottle"
+    else
+      "bottles"
+    end
   end
 end

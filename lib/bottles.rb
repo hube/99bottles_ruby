@@ -1,3 +1,5 @@
+require_relative 'bottle_count'
+
 class Bottles
   def verse(verse_num)
     "#{quantity(verse_num).capitalize} #{container(verse_num)} of beer on the wall, " +
@@ -19,42 +21,18 @@ class Bottles
   private
 
   def container(count)
-    if count == 1
-      "bottle"
-    else
-      "bottles"
-    end
-  end
-
-  def pronoun(count)
-    if count == 1
-      "it"
-    else
-      "one"
-    end
+    BottleCount.new(count).container
   end
 
   def quantity(count)
-    if count == 0
-      "no more"
-    else
-      count.to_s
-    end
+    BottleCount.new(count).quantity
   end
 
   def action(count)
-    if count == 0
-      "Go to the store and buy some more"
-    else
-      "Take #{pronoun(count)} down and pass it around"
-    end
+    BottleCount.new(count).action
   end
 
   def successor(count)
-    if count == 0
-      99
-    else
-      count - 1
-    end
+    BottleCount.new(count).successor
   end
 end

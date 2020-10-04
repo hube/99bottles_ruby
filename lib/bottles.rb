@@ -1,11 +1,6 @@
 class Bottles
   def verse(verse_num)
     case verse_num
-    when 2
-      "#{verse_num} bottles of beer on the wall, " +
-      "#{verse_num} bottles of beer.\n" +
-      "Take one down and pass it around, " +
-      "#{verse_num - 1} bottle of beer on the wall.\n"
     when 1
       "1 bottle of beer on the wall, " +
       "1 bottle of beer.\n" +
@@ -16,6 +11,11 @@ class Bottles
       "no more bottles of beer.\n" +
       "Go to the store and buy some more, " +
       "99 bottles of beer on the wall.\n"
+    when 2
+      "#{verse_num} bottles of beer on the wall, " +
+      "#{verse_num} bottles of beer.\n" +
+      "Take one down and pass it around, " +
+      "#{verse_num - 1} bottle of beer on the wall.\n"
     else
       "#{verse_num} bottles of beer on the wall, " +
       "#{verse_num} bottles of beer.\n" +

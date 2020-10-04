@@ -19,8 +19,7 @@ class Bottles
   private
 
   def container(count)
-    case count
-    when 1
+    if count == 1
       "bottle"
     else
       "bottles"

@@ -6,16 +6,11 @@ class Bottles
       "no more bottles of beer.\n" +
       "Go to the store and buy some more, " +
       "99 bottles of beer on the wall.\n"
-    when 1
-      "#{verse_num} #{container(verse_num)} of beer on the wall, " +
-      "#{verse_num} #{container(verse_num)} of beer.\n" +
-      "Take #{pronoun(verse_num)} down and pass it around, " +
-      "no more #{container(verse_num - 1)} of beer on the wall.\n"
     else
       "#{verse_num} #{container(verse_num)} of beer on the wall, " +
       "#{verse_num} #{container(verse_num)} of beer.\n" +
       "Take #{pronoun(verse_num)} down and pass it around, " +
-      "#{verse_num - 1} #{container(verse_num - 1)} of beer on the wall.\n"
+      "#{quantity(verse_num - 1)} #{container(verse_num - 1)} of beer on the wall.\n"
     end
   end
 
@@ -45,6 +40,14 @@ class Bottles
       "it"
     else
       "one"
+    end
+  end
+
+  def quantity(count=:fixme)
+    if count == 0
+      "no more"
+    else
+      count
     end
   end
 end

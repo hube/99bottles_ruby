@@ -1,5 +1,5 @@
 class BottleCount
-  attr_reader :count
+  attr_accessor :count
 
   def initialize(count)
     @count = count

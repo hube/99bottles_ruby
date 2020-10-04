@@ -1,11 +1,22 @@
 require_relative 'bottle_count'
 
 class Bottles
+  attr_reader :bottle_count
+
+  def initialize
+    @bottle_count = nil
+  end
+
   def verse(verse_num)
-    "#{quantity(verse_num).capitalize} #{container(verse_num)} of beer on the wall, " +
+    @bottle_count ||= BottleCount.new(verse_num)
+
+    current_verse = "#{quantity(verse_num).capitalize} #{container(verse_num)} of beer on the wall, " +
     "#{quantity(verse_num)} #{container(verse_num)} of beer.\n" +
-    "#{action(verse_num)}, " +
-    "#{quantity(successor(verse_num))} #{container(successor(verse_num))} of beer on the wall.\n"
+    "#{action(verse_num)}, "
+
+    bottle_count.count = bottle_count.successor
+
+    current_verse + "#{quantity(successor(verse_num))} #{container(successor(verse_num))} of beer on the wall.\n"
   end
 
   def verses(starting_verse, ending_verse)
@@ -21,18 +32,18 @@ class Bottles
   private
 
   def container(count)
-    BottleCount.new(count).container
+    bottle_count.container
   end
 
   def quantity(count)
-    BottleCount.new(count).quantity
+    bottle_count.quantity
   end
 
   def action(count)
-    BottleCount.new(count).action
+    bottle_count.action
   end
 
   def successor(count)
-    BottleCount.new(count).successor
+    bottle_count.successor
   end
 end

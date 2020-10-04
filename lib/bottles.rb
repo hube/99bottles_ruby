@@ -20,14 +20,10 @@ class Bottles
     return VERSE % [verse_num, verse_num, verse_num - 1, last_bottle]
   end
 
-  def verses(vstart, vend)
-    verses = []
-
-    (vend..vstart).to_a.reverse.each do |verse_num|
-      verses << verse(verse_num)
-    end
-
-    verses.join("\n")
+  def verses(starting_verse, ending_verse)
+    starting_verse.downto(ending_verse).map do |verse_num|
+      verse(verse_num)
+    end.join("\n")
   end
 
   def song

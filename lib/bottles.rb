@@ -10,7 +10,7 @@ class Bottles
       "#{verse_num} #{container(verse_num)} of beer on the wall, " +
       "#{verse_num} #{container(verse_num)} of beer.\n" +
       "Take it down and pass it around, " +
-      "no more bottles of beer on the wall.\n"
+      "no more #{container(verse_num - 1)} of beer on the wall.\n"
     else
       "#{verse_num} #{container(verse_num)} of beer on the wall, " +
       "#{verse_num} #{container(verse_num)} of beer.\n" +

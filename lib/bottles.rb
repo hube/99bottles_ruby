@@ -12,8 +12,8 @@ class Bottles
       "Go to the store and buy some more, " +
       "99 bottles of beer on the wall.\n"
     else
-      "#{verse_num} bottles of beer on the wall, " +
-      "#{verse_num} bottles of beer.\n" +
+      "#{verse_num} #{container(verse_num)} of beer on the wall, " +
+      "#{verse_num} #{container(verse_num)} of beer.\n" +
       "Take one down and pass it around, " +
       "#{verse_num - 1} #{container(verse_num - 1)} of beer on the wall.\n"
     end

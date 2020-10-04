@@ -1,31 +1,26 @@
 class Bottles
-  VERSE = "%s bottles of beer on the wall, " +
-      "%s bottles of beer.\n" +
-      "Take one down and pass it around, " +
-      "%s bottles of beer on the wall.\n"
-  VERSE_2 = "2 bottles of beer on the wall, " +
-      "2 bottles of beer.\n" +
-      "Take one down and pass it around, " +
-      "1 bottle of beer on the wall.\n"
-  VERSE_1 = "1 bottle of beer on the wall, " +
-      "1 bottle of beer.\n" +
-      "Take it down and pass it around, " +
-      "no more bottles of beer on the wall.\n"
-  VERSE_0 = "No more bottles of beer on the wall, " +
-      "no more bottles of beer.\n" +
-      "Go to the store and buy some more, " +
-      "99 bottles of beer on the wall.\n"
-
   def verse(verse_num)
     case verse_num
     when 2
-      VERSE_2
+      "2 bottles of beer on the wall, " +
+      "2 bottles of beer.\n" +
+      "Take one down and pass it around, " +
+      "1 bottle of beer on the wall.\n"
     when 1
-      VERSE_1
+      "1 bottle of beer on the wall, " +
+      "1 bottle of beer.\n" +
+      "Take it down and pass it around, " +
+      "no more bottles of beer on the wall.\n"
     when 0
-      VERSE_0
+      "No more bottles of beer on the wall, " +
+      "no more bottles of beer.\n" +
+      "Go to the store and buy some more, " +
+      "99 bottles of beer on the wall.\n"
     else
-      VERSE % [verse_num, verse_num, verse_num - 1]
+      "#{verse_num} bottles of beer on the wall, " +
+      "#{verse_num} bottles of beer.\n" +
+      "Take one down and pass it around, " +
+      "#{verse_num - 1} bottles of beer on the wall.\n"
     end
   end
 

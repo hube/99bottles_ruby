@@ -28,4 +28,15 @@ class BottleCount
   def to_s
     "#{quantity} #{container}"
   end
+
+  def self.for(count)
+    case count
+    when 0
+      BottleCount0
+    when 1
+      BottleCount1
+    else
+      BottleCount
+    end.new(count)
+  end
 end

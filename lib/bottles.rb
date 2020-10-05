@@ -1,9 +1,10 @@
 require_relative 'bottle_count'
+require_relative 'bottle_count_0'
 
 class Bottles
   def verse(verse_num)
-    bottle_count = BottleCount.new(verse_num)
-    next_bottle_count = BottleCount.new(bottle_count.successor)
+    bottle_count = bottle_count_for(verse_num)
+    next_bottle_count = bottle_count_for(bottle_count.successor)
 
     "#{bottle_count} of beer on the wall, ".capitalize +
     "#{bottle_count} of beer.\n" +
@@ -19,5 +20,13 @@ class Bottles
 
   def song
     verses(99, 0)
+  end
+
+  def bottle_count_for(count)
+    if count == 0
+      BottleCount0
+    else
+      BottleCount
+    end.new(count)
   end
 end

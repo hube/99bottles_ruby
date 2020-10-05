@@ -22,27 +22,15 @@ class BottleCount
   end
 
   def quantity
-    if count == 0
-      "no more"
-    else
-      count.to_s
-    end
+    count.to_s
   end
 
   def action
-    if count == 0
-      "Go to the store and buy some more"
-    else
-      "Take #{pronoun} down and pass it around"
-    end
+    "Take #{pronoun} down and pass it around"
   end
 
   def successor
-    if count == 0
-      99
-    else
-      count - 1
-    end
+    count - 1
   end
 
   def to_s

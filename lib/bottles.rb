@@ -1,5 +1,6 @@
 require_relative 'bottle_count'
 require_relative 'bottle_count_0'
+require_relative 'bottle_count_1'
 
 class Bottles
   def verse(verse_num)
@@ -23,8 +24,11 @@ class Bottles
   end
 
   def bottle_count_for(count)
-    if count == 0
+    case count
+    when 0
       BottleCount0
+    when 1
+      BottleCount1
     else
       BottleCount
     end.new(count)

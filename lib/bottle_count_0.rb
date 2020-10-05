@@ -10,6 +10,6 @@ class BottleCount0 < BottleCount
   end
 
   def successor
-    99
+    BottleCount.for(99)
   end
 end

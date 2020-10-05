@@ -22,7 +22,7 @@ class BottleCount
   end
 
   def successor
-    count - 1
+    BottleCount.for(count - 1)
   end
 
   def to_s

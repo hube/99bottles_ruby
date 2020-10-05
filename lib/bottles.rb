@@ -5,12 +5,11 @@ require_relative 'bottle_count_1'
 class Bottles
   def verse(verse_num)
     bottle_count = BottleCount.for(verse_num)
-    next_bottle_count = BottleCount.for(bottle_count.successor)
 
     "#{bottle_count} of beer on the wall, ".capitalize +
     "#{bottle_count} of beer.\n" +
     "#{bottle_count.action}, " +
-    "#{next_bottle_count} of beer on the wall.\n"
+    "#{bottle_count.successor} of beer on the wall.\n"
   end
 
   def verses(starting_verse, ending_verse)

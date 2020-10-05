@@ -1,6 +1,7 @@
 require_relative 'bottle_count'
 require_relative 'bottle_count_0'
 require_relative 'bottle_count_1'
+require_relative 'bottle_count_6'
 
 class Bottles
   def verse(verse_num)

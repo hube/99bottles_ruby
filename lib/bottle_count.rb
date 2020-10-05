@@ -35,6 +35,8 @@ class BottleCount
       BottleCount0
     when 1
       BottleCount1
+    when 6
+      BottleCount6
     else
       BottleCount
     end.new(count)

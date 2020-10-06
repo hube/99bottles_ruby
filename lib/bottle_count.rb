@@ -34,7 +34,7 @@ class BottleCount
   end
 
   def self.for(count)
-    @registry.find { |klass| klass.handles?(count) }.new(count)
+    registry.find { |klass| klass.handles?(count) }.new(count)
   end
 
   def self.registry

@@ -4,19 +4,17 @@ require_relative 'bottle_count_1'
 require_relative 'bottle_count_6'
 
 class BottleVerse
-  attr_reader :verse_num
+  attr_reader :bottle_count
 
   def initialize(verse_num)
-    @verse_num = verse_num
+    @bottle_count = verse_num
   end
 
   def self.lyrics(verse_num)
-    new(verse_num).lyrics
+    new(BottleCount.for(verse_num)).lyrics
   end
 
   def lyrics
-    bottle_count = BottleCount.for(verse_num)
-
     "#{bottle_count} of beer on the wall, ".capitalize +
     "#{bottle_count} of beer.\n" +
     "#{bottle_count.action}, " +

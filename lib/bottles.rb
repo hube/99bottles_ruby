@@ -1,16 +1,14 @@
-require_relative 'bottle_count'
-require_relative 'bottle_count_0'
-require_relative 'bottle_count_1'
-require_relative 'bottle_count_6'
+require_relative 'bottle_verse'
 
 class Bottles
-  def verse(verse_num)
-    bottle_count = BottleCount.for(verse_num)
+  attr_reader :verse_template
 
-    "#{bottle_count} of beer on the wall, ".capitalize +
-    "#{bottle_count} of beer.\n" +
-    "#{bottle_count.action}, " +
-    "#{bottle_count.successor} of beer on the wall.\n"
+  def initialize(verse_template: BottleVerse)
+    @verse_template = verse_template
+  end
+
+  def verse(verse_num)
+    verse_template.new(verse_num).lyrics
   end
 
   def verses(starting_verse, ending_verse)

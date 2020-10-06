@@ -29,16 +29,23 @@ class BottleCount
     "#{quantity} #{container}"
   end
 
+  def self.handles?(count)
+    true
+  end
+
   def self.for(count)
-    case count
-    when 0
-      BottleCount0
-    when 1
-      BottleCount1
-    when 6
-      BottleCount6
-    else
-      BottleCount
-    end.new(count)
+    @registry.find { |klass| klass.handles?(count) }.new(count)
+  end
+
+  def self.registry
+    @registry ||= [BottleCount]
+  end
+
+  def self.register(klass)
+    registry.prepend(klass)
+  end
+
+  def self.inherited(klass)
+    register(klass)
   end
 end

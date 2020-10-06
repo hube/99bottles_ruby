@@ -8,4 +8,8 @@ class BottleCount1 < BottleCount
   def pronoun
     "it"
   end
+
+  def self.handles?(count)
+    count == 1
+  end
 end

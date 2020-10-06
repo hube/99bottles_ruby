@@ -12,4 +12,8 @@ class BottleCount0 < BottleCount
   def successor
     BottleCount.for(99)
   end
+
+  def self.handles?(count)
+    count == 0
+  end
 end

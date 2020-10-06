@@ -10,6 +10,10 @@ class BottleVerse
     @verse_num = verse_num
   end
 
+  def self.lyrics(verse_num)
+    new(verse_num).lyrics
+  end
+
   def lyrics
     bottle_count = BottleCount.for(verse_num)
 

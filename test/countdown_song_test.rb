@@ -2,14 +2,9 @@ gem 'minitest', '~> 5.4'
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/countdown_song'
+require_relative 'verse_fake'
 
 class BottlesTest < Minitest::Test
-  class VerseFake
-    def self.lyrics(verse_num)
-      "This is verse #{verse_num}\n"
-    end
-  end
-
   def test_verse
     expected = "This is verse 500\n"
     assert_equal(
